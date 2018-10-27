@@ -4,7 +4,8 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 
-const newbooksendpoint = 'https://apps.lib.kth.se/webservices/primo/api/v1/';
+//const newbooksendpoint = 'https://apps.lib.kth.se/webservices/primo/api/v1/';
+const newbooksendpoint = 'http://hyper-v1.lib.kth.se/primo/api/v1/';
 const primoxserviceendpoint = 'https://pmt-eu.hosted.exlibrisgroup.com/PrimoWebServices/xservice/search/brief/';
 const httpOptions = {
   headers: new HttpHeaders({
