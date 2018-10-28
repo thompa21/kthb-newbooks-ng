@@ -1,10 +1,17 @@
 <div style="display:flex;flex-direction:col;flex-wrap: wrap;">
-  <div style="flex:1" *ngFor="let p of newbooks; let i=index;">
-    <a style="display:flex;flex-direction:col;flex-wrap: wrap;" target="_new" href="https://pmt-eu.hosted.exlibrisgroup.com/primo-explore/fulldisplay?docid={{p.recordid}}&vid=46KTH_VU1_L&search_scope=default_scope&tab=default_tab&lang=en_US">
-        <img *ngIf="p.coverurl!='' && p.coverurl!=null" width="150px" height="200px" src = "{{p.coverurl}}"/>
-        <img style="border:1px solid #ccc" *ngIf="p.coverurl==''||p.coverurl==null" width="150px" height="200px" src = "https://pmt-eu.hosted.exlibrisgroup.com/primo-explore/custom/46KTH_VU1_B/img/icon_book.png"/>
-        <div class="badge">{{p.title}}</div>
-        <div>{{p.activationdate | date : "yyyy-MM-dd" : timezone}}</div> 
+  <div style="width:150px;padding-right:10px;padding-bottom:10px;" *ngFor="let p of newbooks; let i=index;">
+    <a style="display:flex;flex-direction:column;flex-wrap: wrap;" target="_new" href="https://pmt-eu.hosted.exlibrisgroup.com/primo-explore/fulldisplay?docid={{p.recordid}}&vid=46KTH_VU1_L&search_scope=default_scope&tab=default_tab&lang=en_US">
+        <div>
+          <img *ngIf="p.coverurl!='' && p.coverurl!=null" width="150px" height="200px" src = "{{p.coverurl}}"/>
+        </div>
+        <div>
+          <img style="border:1px solid #ccc" *ngIf="p.coverurl==''||p.coverurl==null" width="150px" height="200px" src = "https://pmt-eu.hosted.exlibrisgroup.com/primo-explore/custom/46KTH_VU1_B/img/icon_book.png"/>
+        </div>
+        <div style="font-size:13px;line-height:16px;height: 50px;overflow:hidden;word-break: break-all;margin-bottom: 10px">{{p.title}}</div>
+        
     </a>
+    <div style="font-size:13px;line-height:16px;overflow:hidden;word-break: break-all;margin-bottom: 10px">ISBN: {{p.isbnprimo}}</div>
+    <div style="font-size:13px;line-height:16px;overflow:hidden;word-break: break-all;margin-bottom: 10px">Dewey: {{p.dewey}}</div>
+    <div>Activated: {{p.activationdate | date : "yyyy-MM-dd" : timezone}}</div> 
   </div>
-  </div>
+</div>

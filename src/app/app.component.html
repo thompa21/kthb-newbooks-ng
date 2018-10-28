@@ -1,7 +1,34 @@
-<div style="text-align:center" appSizer="72px">
-  {{title}}
+
+<div id="root">
+  <div class="App">
+    <div class="App-intro">
+      <div class="kthheader">
+        <div class="kthheaderlogo">
+          <div class="floatleft">
+            <div id="logo">
+              <a href="https://www.kth.se/en">
+                <img src="https://apps.lib.kth.se/mrbs/images/KTH_Logotyp_RGB_2013-2.svg" alt="KTHB">
+              </a>
+            </div>
+          </div>
+          <div id="banner" class="floatright">
+            <input type="hidden" name="datatable" value="1">
+            <div class="floatright width100percent">
+              <button class="kthbutton">Logga ut</button>
+            </div>
+          </div>
+        </div>
+        <div class="kthheadertext">
+          <span>KTH Biblioteket - {{title}}</span>
+        </div>
+      </div>
+      <div class="kthheader">
+          <!--a [routerLink]="['newbooks']">New books</a-->
+          <router-outlet></router-outlet>
+          
+      </div>
+    </div>
+    
+  </div>
 </div>
-<div style="text-align:center">
-  <!--a [routerLink]="['newbooks']">New books</a-->
-  <router-outlet></router-outlet>
-</div>
+
