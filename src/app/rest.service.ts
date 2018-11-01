@@ -26,7 +26,6 @@ export class RestService {
   }
 
   getNewBooks(): Observable<any> {
-    console.log("getNewBooks");
     return this.http.get(newbooksendpoint + 'newbooks?limit=none').pipe(
       map(this.extractData));
   }

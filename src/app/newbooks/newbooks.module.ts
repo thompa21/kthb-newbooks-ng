@@ -6,6 +6,8 @@ import { NewBooksComponent } from './newbooks.component';
   imports: [
     CommonModule
   ],
-  declarations: [NewBooksComponent]
+  declarations: [
+    NewBooksComponent
+  ]
 })
 export class NewBooksModule { }

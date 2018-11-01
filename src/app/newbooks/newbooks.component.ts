@@ -20,10 +20,19 @@ export class NewBooksComponent implements OnInit {
 
   getNewBooks() {
     this.newbooks = [];
-    this.rest.getNewBooks().subscribe((data: {}) => {
-      console.log(data);
+    this.rest.getNewBooks().subscribe((data: any[]) => {
+      //sätt nocoverimage om coverurl = null
+      for (var index=0;index<data.length;index++) {
+        if (data[index].coverurl == null){
+          data[index].coverurl = "https://secure.syndetics.com/index.aspx?isbn="+ this.randomstring() + "/lc.gif&client=primo&type=unbound&imagelinking=1"
+        }
+      }
       this.newbooks = data;
     });
+  }
+
+  randomstring() {
+    return Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
   }
 
 }
